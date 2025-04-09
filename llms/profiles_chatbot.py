@@ -71,7 +71,7 @@ class ChatBot:
     def run(self):
         print("Start chatting with the bot (type 'exit' to stop)!")
         while True:
-            user_input = input("\nYou: Feel free to ask about profiles rheelated queries: ")
+            user_input = input("\nYou: Feel free to ask about profiles related queries: ")
             if user_input.lower() == 'exit':
                 print("Exiting chat. Goodbye!")
                 break
