@@ -17,9 +17,10 @@ class ChatMessage:
         return {"role": self.role, "content": self.content}
 
 
-MONGODB_URL = "mongodb+srv://hiretalent-dev:Yulwbmn87x92EQ0U@hiretalent.doscksq.mongodb.net"
-DB_NAME = "app-dev"
-COLLECTION_NAME = "profiles"
+# Retrieve MongoDB connection details from environment variables
+MONGODB_URL = os.getenv("MONGODB_URL")
+DB_NAME = os.getenv("DB_NAME")
+COLLECTION_NAME = os.getenv("COLLECTION_NAME")
 
 
 class ChatBot:
