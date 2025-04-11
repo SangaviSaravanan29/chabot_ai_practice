@@ -39,5 +39,7 @@ if __name__ == "__main__":
     # Print the top result
     if results:
         print(results[0])
+        # print(results[0].page_content)
+
     else:
         print("No results found.")
