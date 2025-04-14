@@ -25,12 +25,12 @@ if __name__ == "__main__":
     documents = loader.load()
 
     # Split documents into smaller chunks
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200, add_start_index=True)
     all_splits = text_splitter.split_documents(documents)
 
     # Create an in-memory vector store and add document splits
     vector_store = InMemoryVectorStore(embeddings)
-    vector_store.add_documents(all_splits)
+    ids = vector_store.add_documents(documents=all_splits)
 
     # Perform a similarity search
     query = "What is Math"
@@ -38,8 +38,8 @@ if __name__ == "__main__":
 
     # Print the top result
     if results:
-        print(results[0])
-        # print(results[0].page_content)
+        # print(results[0])
+        print(results[0].page_content)
 
     else:
         print("No results found.")
