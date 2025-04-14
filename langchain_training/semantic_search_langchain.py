@@ -1,5 +1,4 @@
 import os
-import getpass
 from dotenv import load_dotenv
 from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_mistralai import MistralAIEmbeddings
@@ -13,7 +12,7 @@ if __name__ == "__main__":
     # Get Mistral AI API key
     api_key = os.getenv("MISTRAL_API_KEY")
     if not api_key:
-        api_key = getpass.getpass("Enter API key for Mistral AI: ")
+        print("Please set the environment variable MISTRAL_API_KEY")
 
     pdf_path = os.getenv("PDF_PATH")
 
