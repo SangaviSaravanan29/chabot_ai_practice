@@ -57,7 +57,6 @@ def main():
     api_key = os.getenv("MISTRAL_API_KEY")
     if not api_key:
         print("Please set the environment variable MISTRAL_API_KEY")
-        return
     # Create analyzer instance
     analyzer = SentimentAnalyzer()
     # Sample text
